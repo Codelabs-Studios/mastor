@@ -1,4 +1,3 @@
 py-cord
 aiosqlite
 git+https://github.com/Cryxyemi/mikocord.git
-pre-commit
