@@ -136,3 +136,5 @@ dmypy.json
 *.sqlite-journal
 
 mikocord.json
+
+tests/
