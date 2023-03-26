@@ -1,4 +1,4 @@
 from .cog import Cog
-from .eperm import ePerm
+from .perm import Perm
 
 from .data.emojis import Emojis

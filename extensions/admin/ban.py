@@ -12,7 +12,7 @@ class Ban(
     description="Ban a member from the server.",
     emoji=Emojis["administration"],
     category="Administration",
-    perms=ePerm.BAN_MEMBERS
+    perms=Perm.ban_members()
 ):
     def __init__(self, bot: mc.Bot):
         self.bot = bot

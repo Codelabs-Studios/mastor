@@ -1,3 +1,5 @@
+from contextlib import suppress
+
 import discord
 import mikocord as mc
 from discord.ext import commands
@@ -18,7 +20,7 @@ class Ban(
     description="Unban a user from the server.",
     emoji=Emojis["administration"],
     category="Administration",
-    perms=ePerm.BAN_MEMBERS
+    perms=Perm.ban_members()
 ):
     def __init__(self, bot: mc.Bot):
         self.bot = bot
@@ -34,10 +36,8 @@ class Ban(
                 await ctx.guild.unban(ban.user)
                 await mc.Embeds.success(ctx, f"Successfully unbanned {user}!")
                 if dm:
-                    try:
+                    with suppress(discord.Forbidden, discord.HTTPException):
                         await ban.user.send(f"You have been unbanned from {ctx.guild.name}!")
-                    except discord.Forbidden:
-                        pass
                 return
 
         await mc.Embeds.error(ctx, f"Couldn't find a user named {user}!")
