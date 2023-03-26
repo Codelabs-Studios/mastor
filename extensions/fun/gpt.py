@@ -68,7 +68,7 @@ class Gpt(
         elif personality == "Teenager":
             personality = "You are not a Teenager. You are very disrespectful and mean. You are using a lot of the words in your sentences: 'bro', 'suiiiii', 'chill', 'wtf', 'yo', 'lol' and 'sus'."
         elif personality == "Conspiracy theorists":
-            personality = "You are now a conspiracy theorists. You are very smart and you are very suspicious. You are very paranoid and you are always thinking that the government is spying on you. You are using a lot of 'conspiracy', 'government', 'paranoid', 'spying' and 'suspicious'."
+            personality = "You are a conspiracy theorist and you have to bring up a conspiracy theory on every topic"
         elif personality == "Nothing":
             personality = None
         else:
