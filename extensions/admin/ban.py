@@ -1,7 +1,7 @@
 import discord
 import mikocord as mc
 from discord.ext import commands
-from discord.commands import slash_command, option, Option
+from discord.commands import slash_command, option
 
 from utils import *
 
@@ -18,6 +18,8 @@ class Ban(
         self.bot = bot
 
     @slash_command(name="ban", description="Ban a member from the server.")
+    @commands.bot_has_permissions(ban_members=True)
+    @discord.default_permissions(ban_members=True)
     @option("member", discord.Member, description="The member to ban.")
     @option("reason", str, description="The reason for the ban.", default="No reason provided.", required=False)
     async def _ban(self, ctx: discord.ApplicationContext, member: discord.Member, reason: str) -> None:
@@ -29,3 +31,7 @@ class Ban(
 
         await member.ban(reason=reason)
         await mc.Embeds.success(ctx, f"Successfully banned {member.mention}!")
+
+
+def setup(bot: mc.Bot) -> None:
+    bot.add_cog(Ban(bot))
