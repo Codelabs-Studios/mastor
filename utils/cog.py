@@ -9,7 +9,9 @@ class CustomCogMeta(CogMeta):
 
         attrs["emoji"] = kwargs.pop("emoji", None)
         attrs["category"] = kwargs.pop("category", None)
-        attrs["perms"] = kwargs.pop("perms", discord.Permissions())
+        attrs["perms"] = kwargs.pop("perms", None)
+        attrs["args"] = kwargs.pop("args", None)
+        attrs["title"] = kwargs.pop("title", None)
 
         return super().__new__(cls, name, bases, attrs, **kwargs)
 

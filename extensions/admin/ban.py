@@ -8,11 +8,15 @@ from utils import *
 
 class Ban(
     Cog,
-    name="Ban",
+    title="Ban",
     description="Ban a member from the server.",
     emoji=Emojis["administration"],
     category="Administration",
-    perms=Perm.ban_members()
+    perms=Perm.ban_members(),
+    args=[
+        "member: The member to ban.",
+        "reason: The reason for the ban.",
+    ]
 ):
     def __init__(self, bot: mc.Bot):
         self.bot = bot

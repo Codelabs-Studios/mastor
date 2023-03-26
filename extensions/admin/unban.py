@@ -14,13 +14,17 @@ async def unban_autocomplete(ctx: discord.AutocompleteContext):
     return [str(ban.user) for ban in bans]
 
 
-class Ban(
+class Unban(
     Cog,
-    name="Unban",
+    title="Unban",
     description="Unban a user from the server.",
     emoji=Emojis["administration"],
     category="Administration",
-    perms=Perm.ban_members()
+    perms=Perm.ban_members(),
+    args=[
+        "user: The user to unban.",
+        "dm: Whether to DM the user about the unban.",
+    ]
 ):
     def __init__(self, bot: mc.Bot):
         self.bot = bot
@@ -44,4 +48,4 @@ class Ban(
 
 
 def setup(bot: mc.Bot) -> None:
-    bot.add_cog(Ban(bot))
+    bot.add_cog(Unban(bot))

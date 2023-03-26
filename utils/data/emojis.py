@@ -19,4 +19,6 @@ Emojis = {
     "fun": "🎉",
     "ticket": "🎫",
     "music": "🎵",
+    "utility": "🔧",
+    "help": "❓",
 }
