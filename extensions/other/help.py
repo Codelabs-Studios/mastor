@@ -13,7 +13,7 @@ class Help(
     description="Get help with the bot or the commands.",
     emoji=Emojis["help"],
     category="Other",
-    perms=Perm.send_messages(),
+    perms=None,
     args=[]
 ):
     def __init__(self, bot: mc.Bot) -> None:

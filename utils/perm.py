@@ -1,7 +1,7 @@
 import discord
 
 
-class Perm():
+class Perm:
     @staticmethod
     def administator():
         return discord.Permissions(8)
