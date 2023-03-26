@@ -15,4 +15,5 @@ class CustomCogMeta(CogMeta):
 
 
 class Cog(commands.Cog, metaclass=CustomCogMeta):
+    """Base class for all cogs."""
     pass
